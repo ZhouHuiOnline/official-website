@@ -147,3 +147,24 @@
 </body>
 </html>
 
+
+<script>
+// 和product-detail.html内部完全一模一样的产品数据，保证两边统一
+
+
+// 获取容器
+const wrap = document.getElementById('productWrap');
+// 遍历产品自动生成HTML
+Object.keys(productList).forEach(id => {
+    const item = productList[id];
+    const div = document.createElement('div');
+    div.className = 'product-item';
+    div.innerHTML = `
+        <a href="product-detail.html?id=${id}" style="display:block;text-decoration:none;">
+            <img src="${item.img}" alt="${item.name}">
+            <h3>${item.name}</h3>
+        </a>
+    `;
+    wrap.appendChild(div);
+})
+</script>
