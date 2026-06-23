@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <!-- 关键视口配置：禁止缩放，强制移动端逻辑 -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>河北州晖管道装备有限公司 - 专业管道装备制造商</title>
     <style>
         * {
@@ -11,38 +12,54 @@
             box-sizing: border-box;
             font-family: "Microsoft YaHei", sans-serif;
         }
-        /* 导航栏 */
+        /* 核心：全局容器，电脑端也固定手机宽度居中 */
+        body {
+            background-color: #f5f5f5;
+        }
+        .wrap {
+            max-width: 480px; /* 手机主流宽度，可改成420/500自定义 */
+            width: 100%;
+            min-height: 100vh;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+        /* 导航栏 字号加大适配需求 */
         .nav {
             background: #2c3e50;
-            padding: 15px 0;
+            padding: 20px 15px;
             position: sticky;
             top: 0;
             z-index: 999;
         }
         .nav-container {
-            width: 90%;
-            margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 16px;
             align-items: center;
         }
         .logo {
             color: white;
-            font-size: 22px;
-            font-weight: bold;
+            font-size: 26px;
+            font-weight: 800;
+            text-align: center;
+        }
+        .nav-menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
         }
         .nav-menu a {
             color: white;
             text-decoration: none;
-            margin-left: 25px;
-            font-size: 16px;
+            font-size: 18px;
         }
         .nav-menu a:hover {
             color: #3498db;
         }
-        /*  banner */
+        /* banner区域 */
         .banner {
-            height: 500px;
+            height: 360px;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=1000&h=500');
             background-size: cover;
             background-position: center;
@@ -51,25 +68,26 @@
             justify-content: center;
             color: white;
             text-align: center;
+            padding: 0 15px;
         }
         .banner h1 {
-            font-size: 42px;
+            font-size: 32px;
             margin-bottom: 15px;
         }
         .banner p {
-            font-size: 18px;
-            max-width: 700px;
+            font-size: 17px;
         }
-        /* 内容区块 */
+        /* 内容通用容器 */
         .container {
-            width: 90%;
-            margin: 50px auto;
+            width: 100%;
+            padding: 50px 15px;
+            margin: 0 auto;
         }
         .title {
             text-align: center;
-            font-size: 28px;
+            font-size: 26px;
             color: #2c3e50;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             position: relative;
         }
         .title::after {
@@ -87,10 +105,8 @@
             line-height: 1.8;
             font-size: 16px;
             color: #666;
-            max-width: 900px;
-            margin: 0 auto 40px;
         }
-        /* 产品展示 */
+        /* 产品布局自动换行，手机排版 */
         .product-box {
             display: flex;
             flex-wrap: wrap;
@@ -98,7 +114,7 @@
             justify-content: center;
         }
         .product-item {
-            width: 280px;
+            width: calc(50% - 12px);
             border: 1px solid #eee;
             border-radius: 5px;
             overflow: hidden;
@@ -110,98 +126,91 @@
         }
         .product-item img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
         }
         .product-item h3 {
-            padding: 15px;
+            padding: 12px;
             text-align: center;
             color: #333;
-            font-size: 16px;
+            font-size: 15px;
         }
-        /* 底部 */
+        /* 页脚 */
         .footer {
             background: #2c3e50;
             color: white;
             text-align: center;
-            padding: 30px 0;
-            margin-top: 50px;
+            padding: 30px 15px;
+            font-size: 14px;
         }
-        /* 移动端适配 */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .banner h1 {
-                font-size: 28px;
-            }
-            .banner {
-                height: 350px;
-            }
+        .footer p {
+            line-height: 1.7;
         }
     </style>
 </head>
 <body>
-    <!-- 导航 -->
-    <div class="nav">
-        <div class="nav-container">
-            <div class="logo">河北州晖管道装备有限公司</div>
-            <div class="nav-menu">
-                <a href="index.html">首页</a>
-                <a href="about.html">关于我们</a>
-                <a href="product.html">产品中心</a>
-                <a href="case.html">工程案例</a>
-                <a href="contact.html">联系我们</a>
+    <!-- 外层包裹：强制全局手机宽度 -->
+    <div class="wrap">
+        <!-- 导航 -->
+        <div class="nav">
+            <div class="nav-container">
+                <div class="logo">河北州晖管道装备有限公司</div>
+                <div class="nav-menu">
+                    <a href="index.html">首页</a>
+                    <a href="about.html">关于我们</a>
+                    <a href="product.html">产品中心</a>
+                    <a href="case.html">工程案例</a>
+                    <a href="contact.html">联系我们</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- banner -->
-    <div class="banner">
-        <div>
-            <h1>专业管道装备制造商</h1>
-            <p>品质铸就品牌 · 服务赢得市场 · 创新引领未来</p>
-        </div>
-    </div>
-
-    <!-- 企业简介 -->
-    <div class="container">
-        <h2 class="title">企业简介</h2>
-        <p class="intro">
-            河北州晖管道装备有限公司位于中国管道装备制造基地，是一家集研发、生产、销售于一体的现代化企业。
-            公司专业生产各类管道配件、法兰、弯头、三通、异径管、支吊架等管道装备，产品广泛应用于石油、化工、
-            天然气、电力、冶金、市政工程等行业，畅销全国各地并出口海外市场。
-        </p>
-    </div>
-
-    <!-- 主打产品 -->
-    <div class="container">
-        <h2 class="title">主打产品</h2>
-        <div class="product-box">
-            <div class="product-item">
-                <img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" alt="弯头">
-                <h3>钢制弯头</h3>
-            </div>
-            <div class="product-item">
-                <img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" alt="法兰">
-                <h3>碳钢法兰</h3>
-            </div>
-            <div class="product-item">
-                <img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" alt="三通">
-                <h3>等径三通</h3>
-            </div>
-            <div class="product-item">
-                <img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" alt="异径管">
-                <h3>大小头异径管</h3>
+        <!-- banner -->
+        <div class="banner">
+            <div>
+                <h1>专业管道装备制造商</h1>
+                <p>品质铸就品牌 · 服务赢得市场 · 创新引领未来</p>
             </div>
         </div>
-    </div>
 
-    <!-- 底部 -->
-    <div class="footer">
-        <p>河北州晖管道装备有限公司 版权所有 © 2025</p>
-        <p>地址：河北省沧州市盐山县 电话：138-0000-0000</p>
+        <!-- 企业简介 -->
+        <div class="container">
+            <h2 class="title">企业简介</h2>
+            <p class="intro">
+                河北州晖管道装备有限公司位于中国管道装备制造基地，是一家集研发、生产、销售于一体的现代化企业。
+                公司专业生产各类管道配件、法兰、弯头、三通、异径管、支吊架等管道装备，产品广泛应用于石油、化工、
+                天然气、电力、冶金、市政工程等行业，畅销全国各地并出口海外市场。
+            </p>
+        </div>
+
+        <!-- 主打产品 -->
+        <div class="container">
+            <h2 class="title">主打产品</h2>
+            <div class="product-box">
+                <div class="product-item">
+                    <img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" alt="弯头">
+                    <h3>钢制弯头</h3>
+                </div>
+                <div class="product-item">
+                    <img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" alt="法兰">
+                    <h3>碳钢法兰</h3>
+                </div>
+                <div class="product-item">
+                    <img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" alt="三通">
+                    <h3>等径三通</h3>
+                </div>
+                <div class="product-item">
+                    <img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" alt="异径管">
+                    <h3>大小头异径管</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="footer">
+            <p>河北州晖管道装备有限公司 版权所有 © 2025</p>
+            <p>地址：河北省沧州市盐山县 电话：138-0000-0000</p>
+        </div>
     </div>
 </body>
 </html>
