@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <!-- 关键视口配置：禁止缩放，强制移动端逻辑 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>河北州晖管道装备有限公司 - 专业管道装备制造商</title>
+    <title>工程案例 - 河北州晖管道装备有限公司</title>
     <style>
         * {
             margin: 0;
@@ -12,18 +11,16 @@
             box-sizing: border-box;
             font-family: "Microsoft YaHei", sans-serif;
         }
-        /* 核心：全局容器，电脑端也固定手机宽度居中 */
         body {
             background-color: #f5f5f5;
         }
         .wrap {
-            max-width: 480px; /* 手机主流宽度，可改成420/500自定义 */
+            max-width: 480px;
             width: 100%;
             min-height: 100vh;
             margin: 0 auto;
             background: #ffffff;
         }
-        /* 导航栏 字号加大适配需求 */
         .nav {
             background: #2c3e50;
             padding: 20px 15px;
@@ -57,27 +54,6 @@
         .nav-menu a:hover {
             color: #3498db;
         }
-        /* banner区域 */
-        .banner {
-            height: 360px;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=1000&h=500');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            padding: 0 15px;
-        }
-        .banner h1 {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-        .banner p {
-            font-size: 17px;
-        }
-        /* 内容通用容器 */
         .container {
             width: 100%;
             padding: 50px 15px;
@@ -100,42 +76,30 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        .intro {
-            text-align: center;
-            line-height: 1.8;
-            font-size: 16px;
-            color: #666;
-        }
-        /* 产品布局自动换行，手机排版 */
-        .product-box {
+        .case-box {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
-        .product-item {
-            width: calc(50% - 12px);
+        .case-item {
+            width: 100%;
             border: 1px solid #eee;
             border-radius: 5px;
             overflow: hidden;
-            transition: 0.3s;
         }
-        .product-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .product-item img {
+        .case-item img {
             width: 100%;
-            height: 180px;
+            height: 220px;
             object-fit: cover;
         }
-        .product-item h3 {
-            padding: 12px;
-            text-align: center;
-            color: #333;
-            font-size: 15px;
+        .case-item h3 {
+            padding: 15px;
+            background:#f8f9fa;
+            color:#333;
+            font-size:16px;
+            text-align:center;
         }
-        /* 页脚 */
         .footer {
             background: #2c3e50;
             color: white;
@@ -149,32 +113,36 @@
     </style>
 </head>
 <body>
-    <div class="nav">
-        <div class="nav-container">
-            <div class="logo">河北州晖管道装备有限公司</div>
-            <div class="nav-menu">
-                <a href="index.html">首页</a>
-                <a href="about.html">关于我们</a>
-                <a href="product.html">产品中心</a>
-                <a href="case.html">工程案例</a>
-                <a href="contact.html">联系我们</a>
+    <div class="wrap">
+        <div class="nav">
+            <div class="nav-container">
+                <div class="logo">河北州晖管道装备有限公司</div>
+                <div class="nav-menu">
+                    <a href="index.html">首页</a>
+                    <a href="about.html">关于我们</a>
+                    <a href="product.html">产品中心</a>
+                    <a href="case.html">工程案例</a>
+                    <a href="contact.html">联系我们</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-        <h2 class="title">工程案例</h2>
-        <div class="case-box">
-            <div class="case-item"><img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=600&h=400" alt="石油工程"><h3>石油管道工程项目</h3></div>
-            <div class="case-item"><img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=600&h=400" alt="化工项目"><h3>化工园区管道项目</h3></div>
-            <div class="case-item"><img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=600&h=400" alt="电力项目"><h3>电厂管道配套项目</h3></div>
-            <div class="case-item"><img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=600&h=400" alt="市政项目"><h3>市政热力管道项目</h3></div>
+        <div class="container">
+            <h2 class="title">工程案例</h2>
+            <div class="case-box">
+                <div class="case-item"><img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=600&h=400" alt="石油工程"><h3>石油管道工程项目</h3></div>
+                <div class="case-item"><img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=600&h=400" alt="化工项目"><h3>化工园区管道项目</h3></div>
+                <div class="case-item"><img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=600&h=400" alt="电力项目"><h3>电厂管道配套项目</h3></div>
+                <div class="case-item"><img src="https://img.baidu.com/it/u=308521258,1305129777&fm=253&fmt=auto&app=138&f=JPEG?w=600&h=400" alt="市政项目"><h3>市政热力管道项目</h3></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>河北州晖管道装备有限公司 版权所有 © 2025</p>
+            <p>地址：河北省沧州市盐山县 电话：153-7383-6272</p>
         </div>
     </div>
-
-    <div class="footer">
-        <p>河北州晖管道装备有限公司 版权所有 © 2025</p>
-        <p>地址：河北省沧州市盐山县 电话：138-0000-0000</p>
-    </div>
+</body>
+</html>
 </body>
 </html>
