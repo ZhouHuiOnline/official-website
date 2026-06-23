@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>产品详情 - 河北州晖管道装备有限公司</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+        }
+        .wrap {
+            max-width: 480px;
+            width: 100%;
+            min-height: 100vh;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+        /* 导航栏 单行防换行 全站统一 */
+        .nav {
+            background: #2c3e50;
+            padding: 16px 12px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 800;
+            text-align: center;
+        }
+        .nav-menu {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 8px;
+        }
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            white-space: nowrap;
+        }
+        .nav-menu a:hover {
+            color: #3498db;
+        }
+        .container {
+            width: 100%;
+            padding: 40px 15px;
+            margin: 0 auto;
+        }
+        .title {
+            text-align: center;
+            font-size: 26px;
+            color: #2c3e50;
+            margin-bottom: 35px;
+            position: relative;
+        }
+        .title::after {
+            content: "";
+            width: 80px;
+            height: 3px;
+            background: #3498db;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        /* 产品大图 */
+        .detail-img {
+            width: 100%;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+        /* 信息区块通用样式 */
+        .info-block {
+            margin: 22px 0;
+        }
+        .info-block h3 {
+            font-size: 19px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #eee;
+        }
+        .info-block p {
+            line-height: 1.8;
+            font-size: 16px;
+            color: #444;
+            margin: 8px 0;
+        }
+        /* 返回按钮 */
+        .back-box {
+            margin-top: 35px;
+            text-align: right;
+        }
+        .back-btn {
+            padding: 10px 22px;
+            background: #2c3e50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+        .back-btn:hover {
+            background: #3498db;
+        }
+        /* 页脚 */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+            font-size: 14px;
+        }
+        .footer p {
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- 导航栏 -->
+        <div class="nav">
+            <div class="nav-container">
+                <div class="logo">河北州晖管道装备有限公司</div>
+                <div class="nav-menu">
+                    <a href="index.html">首页</a>
+                    <a href="about.html">关于我们</a>
+                    <a href="product.html">产品中心</a>
+                    <a href="case.html">工程案例</a>
+                    <a href="contact.html">联系我们</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="title">产品详情</h2>
+
+            <!-- 产品图片占位 -->
+            <img class="detail-img" alt="产品实拍">
+
+            <!-- 产品基础信息占位 -->
+            <div class="info-block">
+                <h3>产品名称：<span class="p-name"></span></h3>
+                <p><strong>结构材质：</strong><span class="p-material"></span></p>
+                <p><strong>执行标准：</strong><span class="p-standard"></span></p>
+                <p><strong>规格范围：</strong><span class="p-spec"></span></p>
+                <p><strong>生产工艺：</strong><span class="p-tech"></span></p>
+            </div>
+
+            <!-- 产品简介占位 -->
+            <div class="info-block">
+                <h3>产品简介</h3>
+                <p class="p-desc"></p>
+            </div>
+
+            <!-- 应用领域占位 -->
+            <div class="info-block">
+                <h3>适用领域</h3>
+                <p class="p-use"></p>
+            </div>
+
+            <!-- 返回产品列表 -->
+            <div class="back-box">
+                <a href="product.html" class="back-btn">← 返回产品中心</a>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <p>河北州晖管道装备有限公司 版权所有 © 2025</p>
+            <p>地址：河北省沧州市盐山县 电话：153-7383-6272</p>
+        </div>
+    </div>
+
+<script>
+// ====================== 全部产品数据库（已录入你所有产品，可自行修改图片路径、参数文案）======================
+const productList = {
+    // 1、预制直埋聚氨酯保温管
+    buryPUR: {
+        name: "预制直埋聚氨酯保温管",
+        img: "imges/预制直埋聚氨酯保温管_州晖管道.webp",
+        material: "工作钢管：20#无缝钢管/螺旋钢管；保温层：高密度聚氨酯；外护层：HDPE高密度聚乙烯",
+        standard: "GB/T29047",
+        spec: "DN20~DN1400，保温层厚度按需定制，耐温120℃以内",
+        tech: "钢管除锈→聚氨酯高压发泡成型→PE外护管挤出包覆一体预制",
+        desc: "直埋式保温管道整体密封性强、导热系数低、防水抗渗透，可直接埋地敷设，无需砌筑管沟，施工成本低、保温节能效果优异，是城镇集中供暖主力管材。",
+        use: "城市集中供热管网、小区采暖改造、工业园区热力输送、地热供暖管网"
+    },
+    // 2、预制架空聚氨酯保温管
+    airPUR: {
+        name: "预制架空聚氨酯保温管",
+        img: "imges/预制架空聚氨酯保温管_州晖管道.webp",
+        material: "芯管碳钢钢管、聚氨酯保温层、镀锌铁皮/铝皮",
+        standard: "GB/T29047",
+        spec: "DN25~DN1200，耐高温120℃，保温厚度定制",
+        tech: "钢管预处理→聚氨酯整体发泡→硬质防护外壳包覆预制成型",
+        desc: "专为架空敷设设计，外层抗紫外线、抗风吹雨淋老化，保温隔热稳定，减少热量损耗，适配室外管廊、支架架空热力管线使用。",
+        use: "厂区架空热力管道、老旧小区架空采暖改造、厂区蒸汽辅助采暖管线"
+    },
+    // 3、PE-RTⅡ型保温管
+    pert2: {
+        name: "PE-RTⅡ型保温管",
+        img: "imges/PE-RTⅡ型保温管_州晖管道.webp",
+        material: "内层PE-RTⅡ耐高温聚乙烯、聚氨酯保温层、HDPE外护套管",
+        standard: "GB/T 28799.2-2020 CJ/T 480-2015",
+        spec: "DN20~DN300，长期耐温75℃，瞬时95℃，耐高温抗蠕变",
+        tech: "PERT管材挤出成型+聚氨酯连续发泡一体预制保温结构",
+        desc: "耐高温PERT二代管材耐高温抗蠕变、柔韧性好、耐腐蚀不结垢，整体预制保温，施工便捷，低温供暖、二次换热管网首选。",
+        use: "中央空调冷热输送、地暖集中供热、换热站二次管网、别墅分户采暖管网"
+    },
+    // 4、钢套钢蒸汽保温管
+    steelSteam: {
+        name: "钢套钢蒸汽保温管",
+        img: "imges/钢套钢蒸汽保温管_州晖管道.webp",
+        material: "内工作钢管、硅酸铝+硅酸钙多层隔热、外护螺旋钢管",
+        standard: "CJ/T 246-2018",
+        spec: "DN50~DN1600，适用温度150℃~350℃高温蒸汽",
+        tech: "滑动/固定支架结构、多层隔热填充、内外钢管防腐处理预制",
+        desc: "高温蒸汽专用直埋保温结构，耐高温、排潮泄压结构设计，解决高温蒸汽热胀变形、潮气堆积问题，承压耐高温性能极强。",
+        use: "热电厂蒸汽外输、工业园区高温蒸汽管网、炼厂热力管线、大型集中供暖高温主管"
+    },
+    // 5、内外涂塑钢管
+    coatedPipe: {
+        name: "内外涂塑钢管",
+        img: "imges/内外涂塑钢管_州晖管道.webp",
+        material: "基体碳钢钢管，内外壁环氧树脂EP/聚乙烯PE粉末涂覆",
+        standard: "CJ/T 120",
+        spec: "DN15~DN2000，丝扣、沟槽、法兰多种连接方式",
+        tech: "钢管喷砂除锈→高温静电喷涂塑粉→高温固化成型",
+        desc: "兼具钢管机械强度与塑料防腐耐垢特性，内壁光滑流体阻力小，耐酸碱腐蚀、不易结垢生锈，使用寿命远超普通镀锌管。",
+        use: "给排水、消防喷淋、化工污水输送、海水淡化、市政污水处理、煤矿井下供排水"
+    },
+    // 6、3PE防腐钢管
+    threePE: {
+        name: "3PE防腐钢管",
+        img: "imges/3PE防腐钢管_州晖管道.webp",
+        material: "碳钢无缝/螺旋钢管，底层环氧粉末+胶粘剂+聚乙烯三层复合防腐",
+        standard: "GB/T 23257-2017",
+        spec: "DN50~DN2200，防腐层厚度按设计等级定制",
+        tech: "钢管除锈→环氧粉末喷涂→粘结剂包覆→聚乙烯外层挤包三层同步成型",
+        desc: "埋地管道主流外防腐结构，抗土壤腐蚀、阴极剥离、抗机械磕碰，防潮耐老化，大幅延长地下管道使用寿命。",
+        use: "油气长输管线、市政给排水埋地管道、燃气输送管网、污水处理埋地主干管"
+    },
+    // 7、蛭石隔热管托
+    vermiculiteSupport: {
+        name: "蛭石隔热管托",
+        img: "imges/蛭石隔热管托_州晖管道.webp",
+        material: "碳钢支座+高密度蛭石隔热填充层+不锈钢防护箍",
+        standard: "HG/T 21629",
+        spec: "适配DN25~DN1600各类管径，滑动、固定、导向型均可定制",
+        tech: "钢板切割焊接成型，蛭石压实隔热填充，整体防锈涂装处理",
+        desc: "高温蒸汽管道专用隔热支座，阻断管道热量向支架、土建基础传导，减少热损耗，防止支架过热变形，节能降耗效果明显。",
+        use: "钢套钢蒸汽管道、高温工艺管道、电厂热力管道、化工高温管线支架配套"
+    },
+    // 8、聚氨酯保冷管托
+    purColdSupport: {
+        name: "聚氨酯保冷管托",
+        img: "imges/聚氨酯保冷管托_州晖管道.webp",
+        material: "高密度闭孔聚氨酯保冷芯、碳钢外包壳体、防潮隔汽层",
+        standard: "HG/T 21629",
+        spec: "DN20~DN1200，滑动、固定、导向型，适配零下低温工况",
+        tech: "模具一体发泡成型，外包钢板防护，防潮隔汽密封处理",
+        desc: "低温液氮、液氧、冷媒管道专用保冷支座，抑制结露结霜、杜绝冷桥损耗，避免冷量流失，保障低温系统运行效率。",
+        use: "冷库冷媒管道、LNG低温管线、化工低温介质输送、中央空调冷冻水主管"
+    },
+    // 9、弹簧支吊架
+    springSupport: {
+        name: "弹簧支吊架",
+        img: "imges/弹簧支吊架_州晖管道.webp",
+        material: "碳钢壳体、合金钢弹簧组件、调节螺杆、定位销轴组件",
+        standard: "GB/T 17116",
+        spec: "可变弹簧、恒力弹簧、整定弹簧，荷载范围按需选型定制",
+        tech: "钢板冲压焊接、弹簧热处理定型、整体防锈喷漆处理",
+        desc: "吸收管道热胀冷缩位移形变，平衡管道自重与热位移荷载，防止管线应力变形、悬空下垂，保障高温高压管线运行安全稳定。",
+        use: "电厂锅炉管道、化工工艺管线、蒸汽管网、炼油厂压力管道系统配套"
+    }
+};
+
+// 读取地址栏?id=参数，匹配对应产品
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get('id');
+const currentProduct = productList[productId];
+
+if (currentProduct) {
+    document.title = currentProduct.name + " - 产品详情 | 河北州晖管道装备有限公司";
+    document.querySelector('.detail-img').src = currentProduct.img;
+    document.querySelector('.p-name').textContent = currentProduct.name;
+    document.querySelector('.p-material').textContent = currentProduct.material;
+    document.querySelector('.p-standard').textContent = currentProduct.standard;
+    document.querySelector('.p-spec').textContent = currentProduct.spec;
+    document.querySelector('.p-tech').textContent = currentProduct.tech;
+    document.querySelector('.p-desc').textContent = currentProduct.desc;
+    document.querySelector('.p-use').textContent = currentProduct.use;
+} else {
+    // 产品不存在自动跳转产品列表
+    location.href = "product.html";
+}
+</script>
+</body>
+</html>
+</script>
+</body>
+</html>
