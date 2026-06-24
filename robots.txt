@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+# 网站地图地址
+Sitemap: https://zhouhuionline.github.io/official-website/sitemap.xml
+
+# 禁止抓取无用文件夹，避免无效收录
+Disallow: /.github/
+Disallow: /.git/
+Disallow: /?*
