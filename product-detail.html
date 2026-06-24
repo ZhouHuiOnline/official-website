@@ -297,7 +297,25 @@ const productId = urlParams.get('id');
 const currentProduct = productList[productId];
 
 if (currentProduct) {
-    document.title = currentProduct.name + " - 产品详情 | 河北州晖管道装备有限公司";
+    // 动态修改网页标题
+    document.title = currentProduct.name + "_厂家定制报价_规格参数-河北州晖管道装备有限公司";
+    // 动态创建/修改keywords标签
+    let keyMeta = document.querySelector('meta[name="keywords"]');
+    if(!keyMeta){
+        keyMeta = document.createElement('meta');
+        keyMeta.name = "keywords";
+        document.head.appendChild(keyMeta);
+    }
+    keyMeta.content = currentProduct.name + ",管道生产厂家,规格定制,工程报价";
+    // 动态创建/修改description标签
+    let descMeta = document.querySelector('meta[name="description"]');
+    if(!descMeta){
+        descMeta = document.createElement('meta');
+        descMeta.name = "description";
+        document.head.appendChild(descMeta);
+    }
+    descMeta.content = "河北州晖管道专业生产"+currentProduct.name+"，国标原材料生产，口径、壁厚、防腐保温结构均可定制，适配城市供暖、化工蒸汽、埋地防腐各类工程项目，可快速出具报价方案。";
+
     document.querySelector('.detail-img').src = currentProduct.img;
     document.querySelector('.p-name').textContent = currentProduct.name;
     document.querySelector('.p-material').textContent = currentProduct.material;
@@ -307,7 +325,6 @@ if (currentProduct) {
     document.querySelector('.p-desc').textContent = currentProduct.desc;
     document.querySelector('.p-use').textContent = currentProduct.use;
 } else {
-    // 产品不存在自动跳转产品列表
     location.href = "product.html";
 }
 </script>
