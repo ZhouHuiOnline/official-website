@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 移动端适配标签 -->
+    <meta name="mobile-agent" content="format=html5; url=https://zhouhuionline.github.io/official-website/product-detail.html">
+    <!-- 规范化链接，避免参数造成重复收录 -->
+    <link rel="canonical" href="https://zhouhuionline.github.io/official-website/product-detail.html">
+    <!-- 先预留空标签，由JS动态填充内容 -->
     <title>产品详情 - 河北州晖管道装备有限公司</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
     <style>
         * {
             margin: 0;
@@ -303,25 +310,14 @@ const productId = urlParams.get('id');
 const currentProduct = productList[productId];
 
 if (currentProduct) {
-    // 动态修改网页标题
+    // 动态标题
     document.title = currentProduct.name + "_厂家定制报价_规格参数-河北州晖管道装备有限公司";
-    // 动态创建/修改keywords标签
-    let keyMeta = document.querySelector('meta[name="keywords"]');
-    if(!keyMeta){
-        keyMeta = document.createElement('meta');
-        keyMeta.name = "keywords";
-        document.head.appendChild(keyMeta);
-    }
-    keyMeta.content = currentProduct.name + ",管道生产厂家,规格定制,工程报价";
-    // 动态创建/修改description标签
-    let descMeta = document.querySelector('meta[name="description"]');
-    if(!descMeta){
-        descMeta = document.createElement('meta');
-        descMeta.name = "description";
-        document.head.appendChild(descMeta);
-    }
-    descMeta.content = "河北州晖管道专业生产"+currentProduct.name+"，国标原材料生产，口径、壁厚、防腐保温结构均可定制，适配城市供暖、化工蒸汽、埋地防腐各类工程项目，可快速出具报价方案。";
+    // 动态关键词
+    document.querySelector('meta[name="keywords"]').content = currentProduct.name + ",管道生产厂家,规格定制,工程报价,沧州管道工厂";
+    // 动态描述
+    document.querySelector('meta[name="description"]').content = "河北州晖管道专业生产"+currentProduct.name+"，国标原材料生产，口径、壁厚、防腐保温结构均可定制，适配城市供暖、化工蒸汽、埋地防腐各类工程项目，可快速出具报价方案。";
 
+    // 原有页面赋值代码不动
     document.querySelector('.detail-img').src = currentProduct.img;
     document.querySelector('.p-name').textContent = currentProduct.name;
     document.querySelector('.p-material').textContent = currentProduct.material;
